@@ -2,6 +2,10 @@
 
 Transcribe YouTube videos for LLM chat apps.
 
+## Usage
+
+Example prompt: Summarize https://www.youtube.com/watch?v=uB9yZenVLzg
+
 ## Install
 
 - Install [Claude Desktop](https://claude.ai/download)
@@ -12,6 +16,21 @@ Transcribe YouTube videos for LLM chat apps.
 - Install the MCP server: `fastmcp install claude-desktop mcp_server.py --with youtube-transcript-api`
 - Restart Claude Desktop (Digger Solo app needs to be running)
 
-## Usage
-
-Example prompt: Summarize https://www.youtube.com/watch?v=uB9yZenVLzg
+## MCP JSON Config
+```json
+"YouTube transcription service": {
+      "command": "uv",
+      "args": [
+        "run",
+        "--with",
+        "fastmcp",
+        "--with",
+        "youtube-transcript-api",
+        "fastmcp",
+        "run",
+        "$INSERT_PATH/youtube-transcript-mcp/mcp_server.py"
+      ],
+      "env": {},
+      "transport": "stdio"
+    }
+```
