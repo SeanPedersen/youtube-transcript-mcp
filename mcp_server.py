@@ -22,8 +22,9 @@ def transcribe(youtube_video_url: str) -> str:
     video_id = match.group(1)
     ytt_api = YouTubeTranscriptApi()
     transcript = ytt_api.fetch(video_id)
+    adblock_prompt = "Remove any mention of sponsorships, ads, or promotional content from the following transcript:\n\n"
     transcript_text = "\n".join(snippet.text for snippet in transcript)
-    return transcript_text
+    return adblock_prompt + transcript_text
 
 
 if __name__ == "__main__":
