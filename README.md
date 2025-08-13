@@ -4,7 +4,15 @@ Transcribe YouTube videos for LLM chat apps.
 
 ## Usage
 
-Example prompt: Summarize https://www.youtube.com/watch?v=uB9yZenVLzg
+### Tools Available
+
+1. **`transcribe`** - Returns the full transcript as text
+   - Example: "Transcribe https://www.youtube.com/watch?v=uB9yZenVLzg"
+
+2. **`transcribe_to_file`** - Saves transcript to a file and returns confirmation
+   - Example: "Save transcript of https://www.youtube.com/watch?v=uB9yZenVLzg to transcript.txt"
+   - Optional `output_file` parameter (defaults to `transcript_{video_id}.txt`)
+   - Files are saved in current directory only for security
 
 ## Install
 
