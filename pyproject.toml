@@ -1,8 +1,37 @@
 [project]
 name = "youtube-transcript-mcp-server"
 version = "0.1.0"
+description = "MCP server that fetches YouTube transcripts for LLM chat apps."
+readme = "README.md"
+license = { text = "MIT" }
+authors = [{ name = "Sean Pedersen" }]
 requires-python = ">=3.11"
 dependencies = [
     "fastmcp>=2.10.1",
     "youtube-transcript-api>=1.2.1",
 ]
+keywords = ["mcp", "youtube", "transcript", "llm", "fastmcp"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Topic :: Multimedia :: Video",
+]
+
+[project.urls]
+Homepage = "https://github.com/SeanPedersen/youtube-transcript-mcp"
+Repository = "https://github.com/SeanPedersen/youtube-transcript-mcp"
+Issues = "https://github.com/SeanPedersen/youtube-transcript-mcp/issues"
+
+[project.scripts]
+youtube-transcript-mcp-server = "mcp_server:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+include = ["mcp_server.py"]
+
+[tool.hatch.build.targets.sdist]
+include = ["mcp_server.py", "README.md", "pyproject.toml"]

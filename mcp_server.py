@@ -25,5 +25,9 @@ def transcribe(youtube_video_url: str) -> str:
     return adblock_prompt + transcript_text
 
 
-if __name__ == "__main__":
+def main():
     mcp.run()
+
+
+if __name__ == "__main__":
+    main()
